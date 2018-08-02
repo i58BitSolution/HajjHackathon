@@ -19,20 +19,23 @@ table {
 }
 
 th, td {
-    text-align: left;
+    text-align:left;
     padding: 8px;
+    width: 100%;
 }
 
-tr:nth-child(even){background-color: #f2f2f2}
+tr:nth-child(even){background-color: #f2f2f2; width: 100%;}
 
 th {
-    background-color: #000000;
-    color: white;
+    background-color: #FFFFFF;
+    color: black;
+    font-weight: bold;
+    width: 100%;
 }
 
       </style>
    </head>
-   <body>
+  <body>
       <?php
 		 // Connect to MySQL
 		 $conDB = mysqli_connect( "localhost", "root", "" , "Hamlati");
@@ -41,17 +44,22 @@ th {
             die( "<p>Could not connect to database</p></body></html>" );
 
          // build SELECT query
-		 if(isset($_POST['submit']))
-		  {
-				$query = "SELECT * FROM hamlahTable";
-			}
 
+			if($_POST['qurashi']){
+				$query = "SELECT * FROM hamlahTable WHERE ID=1";}
+        else if($_POST['qurashi']){
+          $query = "SELECT * FROM hamlahTable";
+        }
+        else if($_POST['qurashi']){
+          $query = "SELECT * FROM hamlahTable";
+        }
 
          // query MailingList database
          if ( !( $result = mysqli_query( $conDB, $query ) ) )
          {
             print( "<p>Could not execute query!</p>" );
             die( mysqli_error() . "</body></html>" );
+
          } // end if
       ?><!-- end PHP script -->
 
@@ -89,8 +97,8 @@ th {
                print( "<tr>" );
 
                foreach ( $row as $key => $value )
-                  print( "<td>$value</td>" );
 
+                  print( "<td>$value</td>" );
                print( "</tr>" );
             } // end for
 
