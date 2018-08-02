@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+          <script src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
+          <script src="https://cdn.rawgit.com/vast-engineering/jquery-popup-overlay/1.7.13/jquery.popupoverlay.js"></script>
+
+        <style>
+        .wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+        </style>
+  </head>
+
+  <body style="padding-top:10%">
+    <nav class="navbar fixed-top navbar-expand-lg bg-light navbar-light" id="navid">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+		<img src="Hamlatilogo.png" alt="P" width="99" height="1" class="img-fluid navbar-brand rounded-circle">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active"> <a class="nav-link" href="indexx.html">Home<span class="sr-only"></span></a></li>
+      <li class="nav-item"> <a class="nav-link" href="">Book a residence</a> </li>
+		  <li class="nav-item"> <a class="nav-link" href="">Volunteering</a> </li>
+		  <li class="nav-item "> <a class="nav-link" href=""> contact us </a>
+        </li>
+      </ul>
+  </div>
+</nav>
+
+<!--Begining of the form  -->
+<form class="container"  method="post" id="form" >
+
+    <h2>Registration form</h2><hr>
+
+   <div class="row">
+    <div class="col-lg-5">
+    <div class="form-group">
+      <label for="fname">Full Name:</label>
+      <input type="text" class="form-control" id="fname" name="fname" required>
+    </div>
+    </div>
+
+    <div class="col-lg-5">
+    <div class="form-group">
+      <label for="lname">??:</label>
+      <input type="text" class="form-control" id="lname" name="lname" required>
+    </div>
+    </div>
+   </div>
+
+
+
+   <div class="row">
+    <div class="form-group col-lg-4">
+    <label for="nat">ID Number:</label>
+    <input type="text" class="form-control" id="nat" name="nat">
+    </div>
+
+   <div class="col-lg-4">
+    <div class="form-group">
+    <label for="birthday">Date of Birth:</label>
+    <input type="date" class="form-control" id="birthday" placeholder="DD/MM/YY" name="birthday">
+    </div>
+   </div>
+
+   <div class="radio col-lg-2">
+    <label for="sex">Sex:</label></br>
+    <label><input type="radio" name="sex" value="F"> Female &nbsp </label>
+    <label><input type="radio" name="sex" value="M"> Male </label>
+    </div>
+   </div>
+
+    <div class="row">
+    <div class="form-group col-lg-10">
+      <label for="email">Email:</label>
+    <input type="email" class="form-control" id="email" placeholder="example@gmail.com" name="email" required>
+        </div>
+    </div>
+
+    <div class="row">
+    <div class="form-group col-lg-6">
+      <label for="phone">Phone Number:</label>
+    <input type="text" class="form-control" id="phone" placeholder="+966 599 999 999" name="phone">
+    </div>
+
+    <div class="form-group col-lg-4">
+    <label for="regtype">Nationality:</label></br>
+    <input type="text" class="form-control" id="regtype" name="regtype">
+    </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-lg-4">
+    <div class="radio">
+    <p>Is it your first time?</p>
+          <label><input type="radio" name="first" value="yes"> Yes &nbsp </label>
+    <label><input type="radio" name="first" value="no"> No </label>
+    </div>
+    </div>
+    <div class="form-group col-lg-6">
+      <p>Please insert any type of special needs:</p>
+      <!-- Searching by keyword -->
+      <input type="text" class="form-control" id="nat" name="aa">
+    </div>
+    </div>
+
+  </br><a  href="residenceResults.html" class="btn btn-info" >Find Best Results</a><hr>
+
+  </form>
+<!-- End of the form -->
+
+  </body>
+</html>
