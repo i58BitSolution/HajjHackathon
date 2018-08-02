@@ -5,28 +5,51 @@
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
           <script src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
           <script src="https://cdn.rawgit.com/vast-engineering/jquery-popup-overlay/1.7.13/jquery.popupoverlay.js"></script>
+          <script>
+			function showUser(str) {
+			  var xhttp;
+			  if (str.length == 0) {
+				document.getElementById("txtHint").innerHTML = "";
+				return;
+			  }
+			  xhttp = new XMLHttpRequest();
+
+			  xhttp.open("GET", "getHamlahInfo.php?q="+str, true);
+			  xhttp.send();
+
+			  xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+				  document.getElementById("txtHint").innerHTML = this.responseText;
+				}
+			  };
+
+			}
+		</script>
   </head>
 
-  <body style="padding-top:10%">
+  <body style="padding-top:8%">
     <nav class="navbar fixed-top navbar-expand-lg bg-light navbar-light" id="navid">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent1">
-		<img src="Hamlatilogo.png" alt="P" width="99" height="1" class="img-fluid navbar-brand rounded-circle">
+		<img src="Hamlatilogo.png" alt="P" width="10%" height="100%" class="img-fluid navbar-brand rounded-circle">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active"> <a class="nav-link" href="indexx.html">Home<span class="sr-only"></span></a></li>
 
 
-      <li class="nav-item"> <a class="nav-link" href="">Book a residence</a> </li>
-		  <li class="nav-item"> <a class="nav-link" href="">Volunteering</a> </li>
-		  <li class="nav-item "> <a class="nav-link" href=""> contact us </a>
+      <li class="nav-item"> <a class="nav-link" href="ExploreResidence.html">Book a residence</a> </li>
+		  <li class="nav-item"> <a class="nav-link" href="VolunteeringForm.html">Volunteering</a> </li>
+
         </li>
       </ul>
   </div>
 </nav>
 <div class="container">
 
-<img style="border:1px solid black"src="logoQ.jpg"  width="99" height="1" class="img-fluid navbar-brand rounded-circle">
-<h3>ALQURASHI RESIDENCE</h3><p>whom we are? this is a Description about al qurashi residence/campaign</p>
+<img style="border:1px solid black"src="rajhilogo.jpg"  width="10%" class="img-fluid navbar-brand rounded-circle">
+<h3>ALRAJHI RESIDENCE</h3><p>whom we are? this is a Description about al qurashi residence/campaig
+this is a Description about al qurashi residence/campaignthis is a Description about al qurashi residence/campaignthis is a Description about al qurashi residence/campaign
+this is a Description about al qurashi residence/campaignthis is a Description about al qurashi residence/campaignthis is a Description about al qurashi residence/campaign
+this is a Description about al qurashi residence/campaignthis is a Descriptionthis is a Description about al qurashi residence/campaignthis is a Descriptionthis is a Description about al qurashi residence/campaignthis is a Description</p>
 
 <!-- CAROUSEL -->
 <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel">
@@ -52,12 +75,13 @@
 
     <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="carousel-control-next" href="#carouselExampleIndicators1" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div>
 <!--end of the carousel-->
-<!--end of the carousel-->
 
-<form method = "post" action = "getHamlahInfo.php">
-<button style="margin:5%"type="submit" class="btn btn-info" name="submit">Click here for more information about this residence</button>
-       <!-- <p><input class="btn btn-Primary"type = "submit" value = "Send Query" name="submit"></p> -->
-    </form>
+
+<!-- <form method = "post" action = "getHamlahInfo.php" > -->
+  <input style="margin:5%" onclick="showUser(2);" class="btn btn-info" type="button"value="Click here to show more info " name="qurashi" />
+<div id="txtHint"><b></b></div>
+
+    <!-- </form> -->
 
 </div>
   </body>

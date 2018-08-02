@@ -20,7 +20,7 @@ table {
 
 th, td {
     text-align:left;
-    padding: 8px;
+    padding: 4px;
     width: 100%;
 }
 
@@ -38,6 +38,7 @@ th {
   <body>
       <?php
 		 // Connect to MySQL
+     $q = $_REQUEST["q"];
 		 $conDB = mysqli_connect( "localhost", "root", "" , "Hamlati");
 
          if ( !$conDB )
@@ -45,14 +46,16 @@ th {
 
          // build SELECT query
 
-			if($_POST['qurashi']){
-				$query = "SELECT * FROM hamlahTable WHERE ID=1";}
-        else if($_POST['qurashi']){
-          $query = "SELECT * FROM hamlahTable";
-        }
-        else if($_POST['qurashi']){
-          $query = "SELECT * FROM hamlahTable";
-        }
+			// if($_POST['qurashi']){
+			// 	$query = "SELECT * FROM hamlahTable WHERE ID=1";}
+      //   else if($_POST['qurashi']){
+      //     $query = "SELECT * FROM hamlahTable";
+      //   }
+      //   else if($_POST['qurashi']){
+      //     $query = "SELECT * FROM hamlahTable";
+      //   }
+      $query = "SELECT * FROM hamlahTable WHERE id = '".$q."'";
+      $result = mysqli_query($conDB,$query);
 
          // query MailingList database
          if ( !( $result = mysqli_query( $conDB, $query ) ) )
@@ -64,7 +67,7 @@ th {
       ?><!-- end PHP script -->
 
       <h1>More information</h1>
-      <table>
+      <table style="margin:4%">
 
          <tr>
             <th>ID</th>
